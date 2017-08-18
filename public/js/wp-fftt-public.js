@@ -89,9 +89,9 @@
 
   //$('.joueur_stats .ct-horizontal').attr('style','height:auto');
 
-  if( 'wpfftt-' === wpffttajaxmatch.wp_fftt_prefix) {
   $(document).on( 'click', '.wpfftt-loader', function( event ) {
-    var rencontre_id = $(this).data('wpfftt-collapse');
+    if( 'wpfftt-' === wpffttajaxmatch.wp_fftt_prefix) {
+      var rencontre_id = $(this).data('wpfftt-collapse');
     var rencontre_loader = $('#load_' + rencontre_id);
     $('#loading_wpfftt_' + rencontre_id).show();
     $.ajax({
@@ -117,8 +117,9 @@
         $('#loading_wpfftt_' + rencontre_id).hide();
       }
     })
+    }
   });
-}
+
 
 
 })(jQuery);
