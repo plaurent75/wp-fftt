@@ -1,0 +1,422 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Wp FFTT\n"
+"POT-Creation-Date: 2017-08-17 12:49+0200\n"
+"PO-Revision-Date: 2017-08-17 12:50+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 2.0.3\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: wp-fftt.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: admin/class-wp-fftt-admin.php:149
+msgid "Settings"
+msgstr "Paramètres"
+
+#: admin/class-wp-fftt-admin.php:156
+msgid "Login (required)"
+msgstr "Identifiant (requis)"
+
+#: admin/class-wp-fftt-admin.php:164
+msgid "Password (required)"
+msgstr "Mot de passe de API (requis)"
+
+#: admin/class-wp-fftt-admin.php:172
+msgid "Club Number (optional)"
+msgstr "Numéro de Club (facultatif)"
+
+#: admin/class-wp-fftt-admin.php:180
+msgid "department (optional)"
+msgstr "Département (facultatif)"
+
+#: admin/class-wp-fftt-admin.php:188
+msgid "Where to display it ?"
+msgstr "Choisir la page où afficher le formulaire"
+
+#: admin/class-wp-fftt-admin.php:196
+msgid "Google Maps Api Key (optional)"
+msgstr "Clé API Google Maps (facultatif)"
+
+#: admin/class-wp-fftt-admin.php:204
+msgid "Disable Plugin CSS"
+msgstr "Désactiver les styles (fichiers CSS) du plugin?"
+
+#: admin/class-wp-fftt-admin.php:264
+msgid ""
+"Login & password must be requested from the federation. You can <a href="
+"\"http://www.fftt.com/site/mediatheque/autres-medias/api\" target=\"_blank"
+"\">claim your access here</a>"
+msgstr ""
+"Login & mot de passe doivent être demandées auprès de la Fédération. Vous "
+"pouvez <a href=\"http://www.fftt.com/site/mediatheque/autres-medias/api\" "
+"target=\"_blank\">demander votre accès ici</a>"
+
+#: admin/class-wp-fftt-admin.php:266
+msgid "Plugin is unusable without access provided by the FFTT"
+msgstr "Ce Plugin est inutilisable sans accès fourni par la FFTT"
+
+#: admin/class-wp-fftt-admin.php:277
+msgid "&mdash; Select &mdash;"
+msgstr "&mdash; Sélectionnez &mdash;"
+
+#: admin/class-wp-fftt-admin.php:283
+msgid "Show"
+msgstr "Afficher"
+
+#: admin/class-wp-fftt-admin.php:285
+msgid "Add New Page"
+msgstr "Ajouter une nouvelle Page"
+
+#: includes/class-wp-fftt-activator.php:44
+msgid "FFTT Data"
+msgstr "Données FFTT"
+
+#: includes/widgets/wp-fftt-results.php:26
+msgid "Display latest parties for each club teams"
+msgstr "Afficher les dernières parties pour chaque équipe du club"
+
+#: includes/widgets/wp-fftt-results.php:28
+msgid "Club Teams results"
+msgstr "Résultats des équipes de Club"
+
+#: includes/widgets/wp-fftt-results.php:122
+#: includes/widgets/wp-fftt-teams.php:100
+#: public/partials/wp-fftt-public-club-nav.php:18
+msgid "Teams"
+msgstr "Equipes"
+
+#: includes/widgets/wp-fftt-results.php:126
+#: includes/widgets/wp-fftt-teams.php:104
+msgid "Title :"
+msgstr "Titre:"
+
+#: includes/widgets/wp-fftt-results.php:133
+#: includes/widgets/wp-fftt-teams.php:108
+#: public/partials/wp-fftt-public-club.php:63
+msgid "Club Number"
+msgstr "Numéro du club"
+
+#: includes/widgets/wp-fftt-teams.php:25
+msgid "Display teams for a club"
+msgstr "Afficher les équipes pour un club"
+
+#: includes/widgets/wp-fftt-teams.php:27
+msgid "Club Teams"
+msgstr "Équipes de club"
+
+#: includes/widgets/wp-fftt-teams.php:78
+#: public/partials/wp-fftt-public-rank.php:40
+#: public/partials/wp-fftt-public-teams.php:10
+msgid "Team"
+msgstr "Équipe"
+
+#: public/class-wp-fftt-public.php:352 public/class-wp-fftt-public.php:436
+msgctxt "slug"
+msgid "player"
+msgstr "joueur"
+
+#: public/class-wp-fftt-public.php:358 public/class-wp-fftt-public.php:363
+#: public/class-wp-fftt-public.php:441
+msgctxt "slug"
+msgid "rank"
+msgstr "classement"
+
+#: public/class-wp-fftt-public.php:367 public/class-wp-fftt-public.php:440
+msgctxt "slug"
+msgid "club"
+msgstr "club"
+
+#: public/class-wp-fftt-public.php:370 public/class-wp-fftt-public.php:445
+msgctxt "slug"
+msgid "department"
+msgstr "departement"
+
+#: public/class-wp-fftt-public.php:395 public/class-wp-fftt-public.php:437
+msgctxt "slug"
+msgid "players"
+msgstr "joueurs"
+
+#: public/class-wp-fftt-public.php:398 public/class-wp-fftt-public.php:438
+msgctxt "slug"
+msgid "team"
+msgstr "equipe"
+
+#: public/class-wp-fftt-public.php:401 public/class-wp-fftt-public.php:439
+msgctxt "slug"
+msgid "teams"
+msgstr "equipes"
+
+#: public/class-wp-fftt-public.php:407 public/class-wp-fftt-public.php:442
+msgctxt "slug"
+msgid "results"
+msgstr "resultats"
+
+#: public/class-wp-fftt-public.php:586
+#, php-format
+msgid "Clubs of the %s department"
+msgstr "Clubs du département %s"
+
+#: public/class-wp-fftt-public.php:596
+#, php-format
+msgid "%s Licencees"
+msgstr "%s Licenciés"
+
+#: public/partials/wp-fftt-public-club-licence.php:13
+msgid "Licensees"
+msgstr "Licenciés"
+
+#: public/partials/wp-fftt-public-club-licence.php:18
+msgid "Last Name"
+msgstr "Nom"
+
+#: public/partials/wp-fftt-public-club-licence.php:19
+msgid "First Name"
+msgstr "Prénom"
+
+#: public/partials/wp-fftt-public-club-licence.php:20
+#: public/partials/wp-fftt-public-joueur.php:52
+msgid "Licence #"
+msgstr "N° de licence"
+
+#: public/partials/wp-fftt-public-club-licence.php:21
+msgid "Sex"
+msgstr "Genre"
+
+#: public/partials/wp-fftt-public-club-licence.php:22
+msgid "Points"
+msgstr "Points"
+
+#: public/partials/wp-fftt-public-club-licence.php:23
+#: public/partials/wp-fftt-public-joueur.php:69
+msgid "Statistics"
+msgstr "Statistiques"
+
+#: public/partials/wp-fftt-public-club-licence.php:36
+#: public/partials/wp-fftt-public-teams.php:31
+msgid "Details"
+msgstr "Détails"
+
+#: public/partials/wp-fftt-public-club-licence.php:59
+#: public/partials/wp-fftt-public-club.php:109
+#: public/partials/wp-fftt-public-teams.php:38
+msgid "Unable to find any data for this club"
+msgstr "Impossible de trouver des données pour ce club"
+
+#: public/partials/wp-fftt-public-club-nav.php:17
+#: public/partials/wp-fftt-public-rank.php:46
+msgid "Club"
+msgstr "Club"
+
+#: public/partials/wp-fftt-public-club-nav.php:19
+msgid "Players"
+msgstr "Joueurs"
+
+#: public/partials/wp-fftt-public-club-nav.php:21
+msgid "Clubs of the department"
+msgstr "Clubs du département"
+
+#: public/partials/wp-fftt-public-club.php:75
+msgid "Visit Website"
+msgstr "Visiter le site"
+
+#: public/partials/wp-fftt-public-club.php:83
+msgid "Club Correspondent"
+msgstr "Correspondant du Club"
+
+#: public/partials/wp-fftt-public-club.php:103
+msgid "More about"
+msgstr "Plus à propos de "
+
+#: public/partials/wp-fftt-public-joueur.php:44
+msgid "Officials Points"
+msgstr "Points Officiels"
+
+#: public/partials/wp-fftt-public-joueur.php:48
+msgid "Early Season Points"
+msgstr "Points débuts de saison"
+
+#: public/partials/wp-fftt-public-joueur.php:56
+msgid "Category"
+msgstr "Catégorie"
+
+#: public/partials/wp-fftt-public-joueur.php:60
+#: public/partials/wp-fftt-public-joueur.php:88
+msgid "Nationnality"
+msgstr "Nationnalité"
+
+#: public/partials/wp-fftt-public-joueur.php:76
+msgid "Monthly points"
+msgstr "Points mensuels"
+
+#: public/partials/wp-fftt-public-joueur.php:80
+msgid "Annual growth"
+msgstr "Progression an."
+
+#: public/partials/wp-fftt-public-joueur.php:84
+msgid "Monthly growth"
+msgstr "Progression mens."
+
+#: public/partials/wp-fftt-public-joueur.php:96
+msgid "national"
+msgstr "national"
+
+#: public/partials/wp-fftt-public-joueur.php:97
+msgid "region"
+msgstr "région"
+
+#: public/partials/wp-fftt-public-joueur.php:98
+msgid "depart."
+msgstr "départ."
+
+#: public/partials/wp-fftt-public-joueur.php:117
+msgid "Historic"
+msgstr "Historique"
+
+#: public/partials/wp-fftt-public-joueur.php:182
+msgid "Details of Validated parties"
+msgstr "Détails des parties validées"
+
+#: public/partials/wp-fftt-public-joueur.php:187
+msgid "Date"
+msgstr "Date"
+
+#: public/partials/wp-fftt-public-joueur.php:188
+msgid "v/d"
+msgstr "v/d"
+
+#: public/partials/wp-fftt-public-joueur.php:189
+msgid "Opponent"
+msgstr "Adversaire"
+
+#: public/partials/wp-fftt-public-joueur.php:190
+msgid "Rank."
+msgstr "Class."
+
+#: public/partials/wp-fftt-public-joueur.php:191
+msgid "Gain / loss"
+msgstr "Gain / perte"
+
+#: public/partials/wp-fftt-public-joueur.php:192
+msgid "Coef."
+msgstr "Coef."
+
+#: public/partials/wp-fftt-public-joueur.php:205
+msgid "Unable to find any data for this licensee"
+msgstr "Impossible de trouver des données pour cette licence"
+
+#: public/partials/wp-fftt-public-parties.php:16
+msgid "Unable to find any data for this player"
+msgstr "Impossible de trouver des données pour ce joueur"
+
+#: public/partials/wp-fftt-public-rank.php:41
+msgid "P"
+msgstr "J"
+
+#: public/partials/wp-fftt-public-rank.php:42
+msgid "pts"
+msgstr "pts"
+
+#: public/partials/wp-fftt-public-rank.php:43
+msgid "W"
+msgstr "G"
+
+#: public/partials/wp-fftt-public-rank.php:44
+msgid "L"
+msgstr "P"
+
+#: public/partials/wp-fftt-public-rank.php:45
+msgid "R"
+msgstr "R"
+
+#: public/partials/wp-fftt-public-results-modal.php:36
+msgid "Composition of teams"
+msgstr "Composition des équipes"
+
+#: public/partials/wp-fftt-public-results-modal.php:50
+#: public/partials/wp-fftt-public-results.php:51
+msgid "Match detail"
+msgstr "Détail de la rencontre"
+
+#: public/partials/wp-fftt-public-results.php:51
+msgid "Loading"
+msgstr "Chargement"
+
+#: public/partials/wp-fftt-public-results.php:70
+msgid "Error : No data for this division"
+msgstr "Erreur : Aucune donnée pour cette division"
+
+#: public/partials/wp-fftt-public-teams.php:11
+msgid "Division"
+msgstr "Division"
+
+#: public/partials/wp-fftt-public-teams.php:12
+msgid "Rank"
+msgstr "Classement"
+
+#: public/partials/wp-fftt-public-teams.php:13
+msgid "Results"
+msgstr "Résultats"
+
+#: public/partials/wp-fftt-public-teams.php:13
+msgid "Calendar"
+msgstr "Calendrier"
+
+#: public/partials/wp-fftt-public-teams.php:30
+msgid "Discover"
+msgstr "Découvrir"
+
+#: public/partials/wp-fftt-single.php:3
+msgid "Find Licensees by License #"
+msgstr "Chercher par N° de licence"
+
+#: public/partials/wp-fftt-single.php:7
+msgid "Get Player"
+msgstr "Trouver"
+
+#: public/partials/wp-fftt-single.php:13
+msgid "Get data for a club #"
+msgstr "Chercher par N° de club"
+
+#: public/partials/wp-fftt-single.php:17
+msgid "Club Details"
+msgstr "Trouver"
+
+#: public/partials/wp-fftt-single.php:23
+msgid "Get Clubs by department"
+msgstr "Trouver tous les clubs d'un département"
+
+#. Plugin Name of the plugin/theme
+msgid "Wp FFTT"
+msgstr "Wp FFTT"
+
+#. Plugin URI of the plugin/theme
+msgid "https://www.patricelaurent.net/portfolio/plugin/wp-fftt/"
+msgstr "https://www.patricelaurent.net/portfolio/plugin/wp-fftt/"
+
+#. Description of the plugin/theme
+msgid "Display table tennis data from the official FFTT Website."
+msgstr ""
+"Afficher les données de tennis de table issues du site officiel de la FFTT."
+
+#. Author of the plugin/theme
+msgid "Patrice LAURENT"
+msgstr "Patrice LAURENT"
+
+#. Author URI of the plugin/theme
+msgid "https://www.patricelaurent.net"
+msgstr "https://www.patricelaurent.net"
+
+#~ msgid "Club Players"
+#~ msgstr "Joueurs du club"
