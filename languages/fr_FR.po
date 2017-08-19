@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Wp FFTT\n"
-"POT-Creation-Date: 2017-08-17 12:49+0200\n"
-"PO-Revision-Date: 2017-08-17 12:51+0200\n"
+"POT-Creation-Date: 2017-08-19 21:56+0200\n"
+"PO-Revision-Date: 2017-08-19 21:57+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -79,6 +79,72 @@ msgstr "Afficher"
 msgid "Add New Page"
 msgstr "Ajouter une nouvelle Page"
 
+#: admin/class-wp-fftt-admin.php:333 admin/class-wp-fftt-admin.php:391
+msgid "Wp FFTT endpoints"
+msgstr " WP FFTT terminaisons"
+
+#: admin/class-wp-fftt-admin.php:334
+msgid "Wp FFTT endpoint"
+msgstr " WP FFTT terminaison"
+
+#: admin/class-wp-fftt-admin.php:366
+msgid "Custom Link"
+msgstr "Lien personnalisé"
+
+#: admin/class-wp-fftt-admin.php:376 public/class-wp-fftt-public.php:367
+#: public/class-wp-fftt-public.php:440
+msgctxt "slug"
+msgid "club"
+msgstr "club"
+
+#: admin/class-wp-fftt-admin.php:376
+#: public/partials/wp-fftt-public-club-nav.php:17
+#: public/partials/wp-fftt-public-rank.php:46
+msgid "Club"
+msgstr "Club"
+
+#: admin/class-wp-fftt-admin.php:377 public/class-wp-fftt-public.php:401
+#: public/class-wp-fftt-public.php:439
+msgctxt "slug"
+msgid "teams"
+msgstr "equipes"
+
+#: admin/class-wp-fftt-admin.php:377 includes/widgets/wp-fftt-results.php:122
+#: includes/widgets/wp-fftt-teams.php:100
+#: public/partials/wp-fftt-public-club-nav.php:18
+msgid "Teams"
+msgstr "Equipes"
+
+#: admin/class-wp-fftt-admin.php:378 public/class-wp-fftt-public.php:395
+#: public/class-wp-fftt-public.php:437
+msgctxt "slug"
+msgid "players"
+msgstr "joueurs"
+
+#: admin/class-wp-fftt-admin.php:378
+#: public/partials/wp-fftt-public-club-nav.php:19
+msgid "Players"
+msgstr "Joueurs"
+
+#: admin/class-wp-fftt-admin.php:379 admin/class-wp-fftt-admin.php:385
+#: public/class-wp-fftt-public.php:370 public/class-wp-fftt-public.php:445
+msgctxt "slug"
+msgid "department"
+msgstr "departement"
+
+#: admin/class-wp-fftt-admin.php:379
+#: public/partials/wp-fftt-public-club-nav.php:21
+msgid "Clubs of the department"
+msgstr "Clubs du département"
+
+#: admin/class-wp-fftt-admin.php:425
+msgid "Select all"
+msgstr "Tout sélectionner"
+
+#: admin/class-wp-fftt-admin.php:428
+msgid "Add to menu"
+msgstr "Ajouter au menu"
+
 #: includes/class-wp-fftt-activator.php:44
 msgid "FFTT Data"
 msgstr "Données FFTT"
@@ -90,12 +156,6 @@ msgstr "Afficher les dernières parties pour chaque équipe du club"
 #: includes/widgets/wp-fftt-results.php:28
 msgid "Club Teams results"
 msgstr "Résultats des équipes de Club"
-
-#: includes/widgets/wp-fftt-results.php:122
-#: includes/widgets/wp-fftt-teams.php:100
-#: public/partials/wp-fftt-public-club-nav.php:18
-msgid "Teams"
-msgstr "Equipes"
 
 #: includes/widgets/wp-fftt-results.php:126
 #: includes/widgets/wp-fftt-teams.php:104
@@ -133,30 +193,10 @@ msgctxt "slug"
 msgid "rank"
 msgstr "classement"
 
-#: public/class-wp-fftt-public.php:367 public/class-wp-fftt-public.php:440
-msgctxt "slug"
-msgid "club"
-msgstr "club"
-
-#: public/class-wp-fftt-public.php:370 public/class-wp-fftt-public.php:445
-msgctxt "slug"
-msgid "department"
-msgstr "departement"
-
-#: public/class-wp-fftt-public.php:395 public/class-wp-fftt-public.php:437
-msgctxt "slug"
-msgid "players"
-msgstr "joueurs"
-
 #: public/class-wp-fftt-public.php:398 public/class-wp-fftt-public.php:438
 msgctxt "slug"
 msgid "team"
 msgstr "equipe"
-
-#: public/class-wp-fftt-public.php:401 public/class-wp-fftt-public.php:439
-msgctxt "slug"
-msgid "teams"
-msgstr "equipes"
 
 #: public/class-wp-fftt-public.php:407 public/class-wp-fftt-public.php:442
 msgctxt "slug"
@@ -172,6 +212,16 @@ msgstr "Clubs du département %s"
 #, php-format
 msgid "%s Licencees"
 msgstr "%s Licenciés"
+
+#: public/class-wp-fftt-public.php:601
+#, php-format
+msgid "%s Teams"
+msgstr "Equipes %s"
+
+#: public/class-wp-fftt-public.php:610
+#, php-format
+msgid "%s Results"
+msgstr "Résultats %s"
 
 #: public/partials/wp-fftt-public-club-licence.php:13
 msgid "Licensees"
@@ -213,19 +263,6 @@ msgstr "Détails"
 #: public/partials/wp-fftt-public-teams.php:38
 msgid "Unable to find any data for this club"
 msgstr "Impossible de trouver des données pour ce club"
-
-#: public/partials/wp-fftt-public-club-nav.php:17
-#: public/partials/wp-fftt-public-rank.php:46
-msgid "Club"
-msgstr "Club"
-
-#: public/partials/wp-fftt-public-club-nav.php:19
-msgid "Players"
-msgstr "Joueurs"
-
-#: public/partials/wp-fftt-public-club-nav.php:21
-msgid "Clubs of the department"
-msgstr "Clubs du département"
 
 #: public/partials/wp-fftt-public-club.php:75
 msgid "Visit Website"

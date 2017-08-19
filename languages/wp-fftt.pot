@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Wp FFTT\n"
-"POT-Creation-Date: 2017-08-17 12:49+0200\n"
+"POT-Creation-Date: 2017-08-19 21:56+0200\n"
 "PO-Revision-Date: 2017-07-23 19:11+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -76,6 +76,72 @@ msgstr ""
 msgid "Add New Page"
 msgstr ""
 
+#: admin/class-wp-fftt-admin.php:333 admin/class-wp-fftt-admin.php:391
+msgid "Wp FFTT endpoints"
+msgstr ""
+
+#: admin/class-wp-fftt-admin.php:334
+msgid "Wp FFTT endpoint"
+msgstr ""
+
+#: admin/class-wp-fftt-admin.php:366
+msgid "Custom Link"
+msgstr ""
+
+#: admin/class-wp-fftt-admin.php:376 public/class-wp-fftt-public.php:367
+#: public/class-wp-fftt-public.php:440
+msgctxt "slug"
+msgid "club"
+msgstr ""
+
+#: admin/class-wp-fftt-admin.php:376
+#: public/partials/wp-fftt-public-club-nav.php:17
+#: public/partials/wp-fftt-public-rank.php:46
+msgid "Club"
+msgstr ""
+
+#: admin/class-wp-fftt-admin.php:377 public/class-wp-fftt-public.php:401
+#: public/class-wp-fftt-public.php:439
+msgctxt "slug"
+msgid "teams"
+msgstr ""
+
+#: admin/class-wp-fftt-admin.php:377 includes/widgets/wp-fftt-results.php:122
+#: includes/widgets/wp-fftt-teams.php:100
+#: public/partials/wp-fftt-public-club-nav.php:18
+msgid "Teams"
+msgstr ""
+
+#: admin/class-wp-fftt-admin.php:378 public/class-wp-fftt-public.php:395
+#: public/class-wp-fftt-public.php:437
+msgctxt "slug"
+msgid "players"
+msgstr ""
+
+#: admin/class-wp-fftt-admin.php:378
+#: public/partials/wp-fftt-public-club-nav.php:19
+msgid "Players"
+msgstr ""
+
+#: admin/class-wp-fftt-admin.php:379 admin/class-wp-fftt-admin.php:385
+#: public/class-wp-fftt-public.php:370 public/class-wp-fftt-public.php:445
+msgctxt "slug"
+msgid "department"
+msgstr ""
+
+#: admin/class-wp-fftt-admin.php:379
+#: public/partials/wp-fftt-public-club-nav.php:21
+msgid "Clubs of the department"
+msgstr ""
+
+#: admin/class-wp-fftt-admin.php:425
+msgid "Select all"
+msgstr ""
+
+#: admin/class-wp-fftt-admin.php:428
+msgid "Add to menu"
+msgstr ""
+
 #: includes/class-wp-fftt-activator.php:44
 msgid "FFTT Data"
 msgstr ""
@@ -86,12 +152,6 @@ msgstr ""
 
 #: includes/widgets/wp-fftt-results.php:28
 msgid "Club Teams results"
-msgstr ""
-
-#: includes/widgets/wp-fftt-results.php:122
-#: includes/widgets/wp-fftt-teams.php:100
-#: public/partials/wp-fftt-public-club-nav.php:18
-msgid "Teams"
 msgstr ""
 
 #: includes/widgets/wp-fftt-results.php:126
@@ -130,29 +190,9 @@ msgctxt "slug"
 msgid "rank"
 msgstr ""
 
-#: public/class-wp-fftt-public.php:367 public/class-wp-fftt-public.php:440
-msgctxt "slug"
-msgid "club"
-msgstr ""
-
-#: public/class-wp-fftt-public.php:370 public/class-wp-fftt-public.php:445
-msgctxt "slug"
-msgid "department"
-msgstr ""
-
-#: public/class-wp-fftt-public.php:395 public/class-wp-fftt-public.php:437
-msgctxt "slug"
-msgid "players"
-msgstr ""
-
 #: public/class-wp-fftt-public.php:398 public/class-wp-fftt-public.php:438
 msgctxt "slug"
 msgid "team"
-msgstr ""
-
-#: public/class-wp-fftt-public.php:401 public/class-wp-fftt-public.php:439
-msgctxt "slug"
-msgid "teams"
 msgstr ""
 
 #: public/class-wp-fftt-public.php:407 public/class-wp-fftt-public.php:442
@@ -168,6 +208,16 @@ msgstr ""
 #: public/class-wp-fftt-public.php:596
 #, php-format
 msgid "%s Licencees"
+msgstr ""
+
+#: public/class-wp-fftt-public.php:601
+#, php-format
+msgid "%s Teams"
+msgstr ""
+
+#: public/class-wp-fftt-public.php:610
+#, php-format
+msgid "%s Results"
 msgstr ""
 
 #: public/partials/wp-fftt-public-club-licence.php:13
@@ -209,19 +259,6 @@ msgstr ""
 #: public/partials/wp-fftt-public-club.php:109
 #: public/partials/wp-fftt-public-teams.php:38
 msgid "Unable to find any data for this club"
-msgstr ""
-
-#: public/partials/wp-fftt-public-club-nav.php:17
-#: public/partials/wp-fftt-public-rank.php:46
-msgid "Club"
-msgstr ""
-
-#: public/partials/wp-fftt-public-club-nav.php:19
-msgid "Players"
-msgstr ""
-
-#: public/partials/wp-fftt-public-club-nav.php:21
-msgid "Clubs of the department"
 msgstr ""
 
 #: public/partials/wp-fftt-public-club.php:75
