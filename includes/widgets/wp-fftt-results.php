@@ -16,6 +16,9 @@ class Wp_Fftt_Teams_Results extends WP_Widget {
 
 	protected $api;
 	protected $wpfftt_slug;
+	protected $wpfftt_css;
+	protected $wpfftt_css_prefix;
+
 
 	/**
 	 * Sets up the widgets name etc
@@ -25,7 +28,7 @@ class Wp_Fftt_Teams_Results extends WP_Widget {
 			'classname'   => 'wp_fftt_teams_results',
 			'description' => __( 'Display latest parties for each club teams', 'wp-fftt' ),
 		);
-		parent::__construct( 'wp_fftt_teams_results', __( 'Club Teams results', 'wp-fftt' ), $widget_ops );
+		parent::__construct( 'wp_fftt_teams_results', 'WPFFTT - '.__( 'Club Teams results', 'wp-fftt' ), $widget_ops );
 		$this->options = get_option( 'wp_fftt_settings' );
 		$this->cache   = new CacheService();
 		if ( empty( $_SESSION['serial'] ) ) {

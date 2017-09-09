@@ -232,6 +232,7 @@ class Wp_Fftt_Public {
 		return ($item1['clt'] > $item2['clt']) ? 1 : -1;
 	}
 
+
 	public function get_team_results( $team_id){
 		//$res = $this->api->getPouleRencontres($division);
 		$this->var_debug($team_id);
@@ -615,7 +616,8 @@ class Wp_Fftt_Public {
 	public function get_widgets(){
 		$widgets = [
 			'Wp_Fftt_Teams' => 'wp_fftt_teams',
-			'Wp_Fftt_Teams_Results' => 'wp_fftt_teams_results'
+			'Wp_Fftt_Teams_Results' => 'wp_fftt_teams_results',
+			'Wp_Fftt_Player_Ranking' => 'wp_fftt_player_ranking'
 		];
 		return $widgets;
 	}

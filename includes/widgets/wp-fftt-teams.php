@@ -16,6 +16,9 @@ class Wp_Fftt_Teams extends WP_Widget{
 
 	protected $api;
 	protected $wpfftt_slug;
+	protected $wpfftt_css;
+	protected $wpfftt_css_prefix;
+
 	/**
 	 * Sets up the widgets name etc
 	 */
@@ -24,7 +27,7 @@ class Wp_Fftt_Teams extends WP_Widget{
 			'classname' => 'wp_fftt_teams',
 			'description' => __('Display teams for a club', 'wp-fftt'),
 		);
-		parent::__construct( 'wp_fftt_teams', __('Club Teams', 'wp-fftt'), $widget_ops );
+		parent::__construct( 'wp_fftt_teams', 'WPFFTT - '.__('Club Teams', 'wp-fftt'), $widget_ops );
 		$this->options = get_option( 'wp_fftt_settings' );
 		$this->cache = new CacheService();
 		if (empty($_SESSION['serial'])) {
