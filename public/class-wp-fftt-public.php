@@ -211,7 +211,7 @@ class Wp_Fftt_Public {
 	}
 
 	public function getClubsByDepartement($department = 89){
-		if(!$department) $department = isset($_GET['department']) ? (int) $_GET['department'] : 89;
+		if(!$department) $department = isset($_GET['department']) ? sanitize_text_field($_GET['department']) : 89;
 		$clubs_department = $this->api->getClubsByDepartement( $department );
 		return $clubs_department;
 	}
@@ -582,7 +582,7 @@ class Wp_Fftt_Public {
 		 * We are in a FFTT page and in front end part
 		 */
 		if(!is_admin() && $id == $this->wpfftt_slug && in_the_loop() ) {
-			if ( get_query_var( 'wp_fftt_club_department' ) && is_numeric( get_query_var( 'wp_fftt_club_department' ) ) ) {
+			if ( get_query_var( 'wp_fftt_club_department' ) && is_string( get_query_var( 'wp_fftt_club_department' ) ) ) {
 				$title = sprintf(__('Clubs of the %s department', 'wp-fftt'), $this->get_dept_name(get_query_var( 'wp_fftt_club_department' )));
 			}
 			if ( get_query_var( 'wp_fftt_club' ) && is_numeric( get_query_var( 'wp_fftt_club' ) ) ) {
@@ -655,7 +655,8 @@ class Wp_Fftt_Public {
 			"17" => "Charente-Maritime",
 			"18" => "Cher",
 			"19" => "Corrèze",
-			"99" => "Corse",
+			"98" => "Haute Corse",
+			"99" => "Corse du sud",
 			"21" => "Côte d'Or",
 			"22" => "Côtes d'Armor",
 			"23" => "Creuse",
@@ -730,7 +731,17 @@ class Wp_Fftt_Public {
 			"92" => "Hauts-de-Seine",
 			"93" => "Seine-Saint-Denis",
 			"94" => "Val-de-Marne",
-			"95" => "Val-d'Oise");
+			"95" => "Val-d'Oise",
+			"9A" => "Guadeloupe",
+			"9B" => "Martinique",
+			"9C" => "Guyane",
+			"9D" => "Réunion",
+			"9E" => "COMITE PROVINCIAL NORD",
+			"9F" => "COMITE PROVINCIAL SUD",
+			"9G" => "Mayotte",
+			"9H" => "Tahiti",
+			"9W" => "Wallis et Futuna",
+		);
 
 		if($cp) return $nom_dept[$cp];
 		else return $nom_dept;

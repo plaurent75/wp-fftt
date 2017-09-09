@@ -1,5 +1,5 @@
 <?php
-if(  get_query_var('wp_fftt_club_department') && is_numeric(get_query_var('wp_fftt_club_department')) )  {
+if(  get_query_var('wp_fftt_club_department') && is_string(get_query_var('wp_fftt_club_department')) )  {
 	$clubs_departement = $this->getClubsByDepartement( get_query_var( 'wp_fftt_club_department' ) );
 	include_once 'wp-fftt-public-clubs-departement.php';
 	include_once 'wp-fftt-public-legal.php';
