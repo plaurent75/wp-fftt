@@ -162,12 +162,12 @@ if($player && is_array($player)) {
               // Y-Axis specific configuration
               axisY: {
                 // Lets offset the chart a bit from the labels
-                offset: 60,
+                offset: 60
               }
-
             };
 
             new Chartist.Line('.joueur_stats', data, options);
+
 
 
           })( jQuery );
