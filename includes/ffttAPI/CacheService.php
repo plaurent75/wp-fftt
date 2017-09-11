@@ -180,8 +180,7 @@ class CacheService {
 	 */
 	public static function remember($key, $expiration, callable $cb, array $params = array()) {
 		$cached = self::get($key);
-
-		if ($cached === false) {
+		if ((false === $cached) || empty($cached)) {
 			$cached = call_user_func_array($cb, $params);
 			self::set($key, $cached, $expiration);
 
@@ -198,7 +197,7 @@ class CacheService {
 		global $wpdb;
 
 		$cachedItems = $wpdb->get_results("
-			SELECT * 
+			SELECT *
 			FROM  {$wpdb->options}
 			WHERE  option_name LIKE  '_transient_" . self::DOMAIN . "%'
 		");

@@ -235,7 +235,7 @@ class Wp_Fftt_Public {
 
 	public function get_team_results( $team_id){
 		//$res = $this->api->getPouleRencontres($division);
-		$this->var_debug($team_id);
+		//$this->var_debug($team_id);
 	}
 	public function shortcode_club($atts){
 		// Attributes

@@ -287,7 +287,6 @@ class ffttAPI {
 		if (!in_array($type, array('Z', 'L', 'D'))) {
 			$type = 'L';
 		}
-
 		return $this->getCachedData("organismes_{$type}", 3600*24*30, function($service) use ($type) {
 			return ffttAPI::getCollection($service->getData('http://www.fftt.com/mobile/pxml/xml_organisme.php', array('type' => $type)), 'organisme');
 		});

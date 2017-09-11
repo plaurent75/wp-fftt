@@ -11,6 +11,12 @@
  * @package    Wp_Fftt
  * @subpackage Wp_Fftt/admin/partials
  */
+if ( ! defined( 'ABSPATH' ) ) exit;
+
+// check user capabilities
+    if (!current_user_can('manage_options')) {
+        return;
+    }
 ?>
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->

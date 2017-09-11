@@ -136,8 +136,15 @@ class Wp_Fftt_Admin {
 
 	public function wp_fftt_add_admin_menu(  ) {
 
-		add_menu_page( 'Wp FFTT', 'Wp FFTT', 'manage_options', 'wp_fftt', [$this,'wp_fftt_options_page'], plugin_dir_url( __FILE__ ) . 'js/ping-pong.png' );
-
+		add_menu_page( 'Wp FFTT', 'Wp FFTT', 'manage_options', 'wp-fftt-options', [$this,'wp_fftt_options_page'], plugin_dir_url( __FILE__ ) . 'js/ping-pong.png' );
+add_submenu_page(
+        'wp-fftt-options',
+        __( 'Wp FFTT admin', 'wp-fftt' ),
+        __( 'Wp FFTT admin', 'wp-fftt' ),
+        'manage_options',
+        'wp-fftt-options',
+        [$this,'wp_fftt_options_page']
+    );
 	}
 
 	public function wp_fftt_settings_init(  ) {

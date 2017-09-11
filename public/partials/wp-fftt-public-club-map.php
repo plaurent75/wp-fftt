@@ -11,7 +11,7 @@
  *
  */
 $map_adress = $nomsallle.', '.$adressesalle1.', '.$adresse_salle.' France';
-wp_enqueue_script('wpfftt_google_map', 'http://maps.googleapis.com/maps/api/js?key='.$this->api_map.'');
+wp_enqueue_script('wpfftt_google_map', 'https://maps.googleapis.com/maps/api/js?key='.$this->api_map.'');
 ?>
 <script>
   var geocoder;
