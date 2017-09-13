@@ -102,7 +102,7 @@ class Wp_Fftt {
 		session_start();
 		$this->options = get_option( 'wp_fftt_settings' );
 		$this->plugin_name = 'wp-fftt';
-		$this->version = '1.0.0';
+		$this->version = WP_FFTT_PLUGIN_VERSION;
 		$this->appId = isset($this->options['wp_fftt_login']) ? $this->options['wp_fftt_login'] : false;
 		$this->appKey =  isset($this->options['wp_fftt_password']) ? $this->options['wp_fftt_password'] : false;
 		$this->club_id =  isset($this->options['wp_fftt_club_id']) ? $this->options['wp_fftt_club_id'] : false;
