@@ -124,13 +124,19 @@ class Wp_Fftt_Admin {
 	}
 
 	public function _register_tinymce_plugin($plugin_array) {
+		$screen = get_current_screen();
+		if('post' === $screen->base) {
 		$plugin_array['wpfftt_button'] = plugin_dir_url( __FILE__ ) . 'js/wp-fftt-admin-button.js';
+		}
 		return $plugin_array;
 	}
 
 	public function _add_tinymce_button($buttons) {
 		//Add the button ID to the $button array
+		$screen = get_current_screen();
+		if('post' === $screen->base) {
 		$buttons[] = "wpfftt_button";
+		}
 		return $buttons;
 	}
 
