@@ -126,7 +126,8 @@ class ffttAPI {
 		$this->cache->delete("clubjoueurs_{$numero}");
 		$this->cache->delete("clubequipes_{$numero}_M");
 		$this->cache->delete("clubequipes_{$numero}_F");
-		$this->cache->delete("clubequipes_{$numero}_");
+		$this->cache->delete("clubequipes_{$numero}_A");
+		$this->cache->delete("licencesclub_{$numero}");
 	}
 
 	public function getJoueur($licence)
