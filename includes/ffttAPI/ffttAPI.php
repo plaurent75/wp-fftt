@@ -131,6 +131,13 @@ class ffttAPI {
 
 	public function getJoueur($licence)
 	{
+		//Exception for player asking to not being displayed
+		$exception = [
+			'2937669',
+		];
+		if (in_array($licence, $exception)){
+			return null;
+		}
 		$joueur = $this->getCachedData("joueur_{$licence}", 3600*24*1, function($service) use ($licence) {
 			return ffttAPI::getObject($service->getData('http://www.fftt.com/mobile/pxml/xml_joueur.php', array('licence' => $licence, 'auto' => 1)), 'joueur');
 		});

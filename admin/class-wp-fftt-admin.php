@@ -37,10 +37,10 @@ class Wp_Fftt_Admin {
 	private $club_id;
 
 	/**
-     * options settings
-     *
-     *  @since    1.0.0
-     * @access   private
+	 * options settings
+	 *
+	 *  @since    1.0.0
+	 * @access   private
 	 * @array array $options
 	 */
 	private $options;
@@ -50,15 +50,17 @@ class Wp_Fftt_Admin {
 	 */
 	private $wpfftt_slug;
 
+	private $api;
+
 	/**
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
 	 * @param      string    $plugin_name       The name of this plugin.
 	 * @param      string    $version    The version of this plugin.
-     * @param       array   $options Options settings
+	 * @param       array   $options Options settings
 	 */
-	public function __construct( $plugin_name, $version, $options,$wpfftt_slug ) {
+	public function __construct( $plugin_name, $version, $options,$wpfftt_slug, $api ) {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
@@ -69,6 +71,7 @@ class Wp_Fftt_Admin {
 		$this->department = isset($this->options['wp_fftt_department']) ? $this->options['wp_fftt_department'] : false;
 		$this->api_map = isset($this->options['wp_fftt_api_map']) ? $this->options['wp_fftt_api_map'] : false;
 		$this->wpfftt_slug = $wpfftt_slug;
+		$this->api = $api;
 		//set default to false, to not disable css
 		$this->wpfftt_css = ( isset($this->options['wp_fftt_css']) && 'true' === $this->options['wp_fftt_css'] ) ? true : false;
 
@@ -99,14 +102,14 @@ class Wp_Fftt_Admin {
 
 	public function wpfftt_admin_head(){
 		?>
-		<!-- TinyMCE Shortcode Plugin -->
-		<script type='text/javascript'>
+        <!-- TinyMCE Shortcode Plugin -->
+        <script type='text/javascript'>
           var wpfftt_plugin = {
             'club_id': '<?php echo $this->club_id; ?>',
             'department': '<?php echo $this->department; ?>',
           };
-		</script>
-		<!-- TinyMCE Shortcode Plugin -->
+        </script>
+        <!-- TinyMCE Shortcode Plugin -->
 		<?php
 	}
 
@@ -126,7 +129,7 @@ class Wp_Fftt_Admin {
 	public function _register_tinymce_plugin($plugin_array) {
 		$screen = get_current_screen();
 		if('post' === $screen->base) {
-		$plugin_array['wpfftt_button'] = plugin_dir_url( __FILE__ ) . 'js/wp-fftt-admin-button.js';
+			$plugin_array['wpfftt_button'] = plugin_dir_url( __FILE__ ) . 'js/wp-fftt-admin-button.js';
 		}
 		return $plugin_array;
 	}
@@ -135,7 +138,7 @@ class Wp_Fftt_Admin {
 		//Add the button ID to the $button array
 		$screen = get_current_screen();
 		if('post' === $screen->base) {
-		$buttons[] = "wpfftt_button";
+			$buttons[] = "wpfftt_button";
 		}
 		return $buttons;
 	}
@@ -143,14 +146,22 @@ class Wp_Fftt_Admin {
 	public function wp_fftt_add_admin_menu(  ) {
 
 		add_menu_page( 'Wp FFTT', 'Wp FFTT', 'manage_options', 'wp-fftt-options', [$this,'wp_fftt_options_page'], plugin_dir_url( __FILE__ ) . 'js/ping-pong.png' );
-add_submenu_page(
-        'wp-fftt-options',
-        __( 'Wp FFTT admin', 'wp-fftt' ),
-        __( 'Wp FFTT admin', 'wp-fftt' ),
-        'manage_options',
-        'wp-fftt-options',
-        [$this,'wp_fftt_options_page']
-    );
+		add_submenu_page(
+			'wp-fftt-options',
+			__( 'Wp FFTT admin', 'wp-fftt' ),
+			__( 'Wp FFTT admin', 'wp-fftt' ),
+			'manage_options',
+			'wp-fftt-options',
+			[$this,'wp_fftt_options_page']
+		);
+		add_submenu_page(
+			'wp-fftt-options',
+			__( 'Wp FFTT Cache', 'wp-fftt' ),
+			__( 'Wp FFTT Cache', 'wp-fftt' ),
+			'manage_options',
+			'wp-fftt-options-cache',
+			[$this,'wp_fftt_cache_page']
+		);
 	}
 
 	public function wp_fftt_settings_init(  ) {
@@ -264,8 +275,8 @@ add_submenu_page(
 	}
 
 	public function wp_fftt_css_render() {
-			?>
-		<input type="radio" name="wp_fftt_settings[wp_fftt_css]" value="true" <?php checked(true, $this->wpfftt_css, true); ?>> Yes
+		?>
+        <input type="radio" name="wp_fftt_settings[wp_fftt_css]" value="true" <?php checked(true, $this->wpfftt_css, true); ?>> Yes
         <input type="radio" name="wp_fftt_settings[wp_fftt_css]" value="false" <?php checked(false, $this->wpfftt_css, true); ?>> No
 		<?php
 	}
@@ -273,11 +284,11 @@ add_submenu_page(
 
 	public function wp_fftt_settings_section_callback(  ) {
 
-		 ?><p><?php
-            _e( 'Login & password must be requested from the federation. You can <a href="http://www.fftt.com/site/mediatheque/autres-medias/api" target="_blank">claim your access here</a>', 'wp-fftt' );
-    ?></p><p><?php
-	_e( 'Plugin is unusable without access provided by the FFTT', 'wp-fftt' );
-	?></p><?php
+		?><p><?php
+		_e( 'Login & password must be requested from the federation. You can <a href="http://www.fftt.com/site/mediatheque/autres-medias/api" target="_blank">claim your access here</a>', 'wp-fftt' );
+		?></p><p><?php
+		_e( 'Plugin is unusable without access provided by the FFTT', 'wp-fftt' );
+		?></p><?php
 
 	}
 
@@ -305,31 +316,33 @@ add_submenu_page(
 	 * @param array $input
 	 *
 	 * @return array
-     * wp_fftt_login, wp_fftt_password, wp_fftt_club_id, wp_fftt_department, wp_fftt_slug, wp_fftt_api_map
+	 * wp_fftt_login, wp_fftt_password, wp_fftt_club_id, wp_fftt_department, wp_fftt_slug, wp_fftt_api_map
 	 */
 	public function sanitize_settings($input){
 		set_transient('wp_fftt_flush_rules', '');
-	    foreach ($input as $key => $value){
-	        $input[$key] = sanitize_text_field($value);
-        }
-	    return $input;
-    }
+		foreach ($input as $key => $value){
+			$input[$key] = sanitize_text_field($value);
+		}
+		return $input;
+	}
 
 	/**
-     * trigger action when option is updated.
-     * Flush the rewrite rul when changing the slug
+	 * trigger action when option is updated.
+	 * Flush the rewrite rul when changing the slug
 	 * @param $old
 	 * @param $new
 	 */
-    public function update_wpfftt_options_action($old, $new){
-	    flush_rewrite_rules();
-    }
+	public function update_wpfftt_options_action($old, $new){
+		flush_rewrite_rules();
+	}
 
-
+	public function wp_fftt_cache_page(){
+		include_once 'partials/wp-fftt-admin-cache-display.php';
+	}
 
 	public function wp_fftt_options_page(  ) {
 
-        include_once 'partials/wp-fftt-admin-display.php';
+		include_once 'partials/wp-fftt-admin-display.php';
 
 	}
 
@@ -386,11 +399,11 @@ add_submenu_page(
 	public function get_admin_menu_items(){
 
 		$items = array(
-		    _x('club', 'slug', 'wp-fftt')          => __('Club', 'wp-fftt'),
-		    _x('teams', 'slug', 'wp-fftt')       => __('Teams', 'wp-fftt'),
-		    _x('players', 'slug', 'wp-fftt')    => __('Players', 'wp-fftt'),
-		    _x('department', 'slug', 'wp-fftt') => __('Clubs of the department', 'wp-fftt')
-		  );
+			_x('club', 'slug', 'wp-fftt')          => __('Club', 'wp-fftt'),
+			_x('teams', 'slug', 'wp-fftt')       => __('Teams', 'wp-fftt'),
+			_x('players', 'slug', 'wp-fftt')    => __('Players', 'wp-fftt'),
+			_x('department', 'slug', 'wp-fftt') => __('Clubs of the department', 'wp-fftt')
+		);
 		return $items;
 	}
 	public function get_account_endpoint_url($endpoint){
@@ -399,51 +412,51 @@ add_submenu_page(
 		return get_permalink($this->wpfftt_slug) .$endpoint.'/'.$numero;
 	}
 	public function add_nav_menu_meta_boxes() {
-	        	add_meta_box(
-	        		'wpfftt_endpoints_nav_link',
-	        		__( 'Wp FFTT endpoints', 'wp-fftt' ),
-	        		array( $this, 'nav_menu_link'),
-	        		'nav-menus',
-	        		'side',
-	        		'low'
-	        	);
-	        }
+		add_meta_box(
+			'wpfftt_endpoints_nav_link',
+			__( 'Wp FFTT endpoints', 'wp-fftt' ),
+			array( $this, 'nav_menu_link'),
+			'nav-menus',
+			'side',
+			'low'
+		);
+	}
 	public function nav_menu_link() {
 		$endpoints = $this->get_admin_menu_items();
 		?>
-		<div id="posttype-wpfftt-endpoints" class="posttypediv">
-			<div id="tabs-panel-wpfftt-endpoints" class="tabs-panel tabs-panel-active">
-				<ul id="wpfftt-endpoints-checklist" class="categorychecklist form-no-clear">
+        <div id="posttype-wpfftt-endpoints" class="posttypediv">
+            <div id="tabs-panel-wpfftt-endpoints" class="tabs-panel tabs-panel-active">
+                <ul id="wpfftt-endpoints-checklist" class="categorychecklist form-no-clear">
 					<?php
 					$i = -1;
 					foreach ( $endpoints as $key => $value ) :
 						?>
-						<li>
-							<label class="menu-item-title">
-								<input type="checkbox" class="menu-item-checkbox" name="menu-item[<?php echo esc_attr( $i ); ?>][menu-item-object-id]" value="<?php echo esc_attr( $i ); ?>" /> <?php echo esc_html( $value ); ?>
-							</label>
-							<input type="hidden" class="menu-item-type" name="menu-item[<?php echo esc_attr( $i ); ?>][menu-item-type]" value="custom" />
-							<input type="hidden" class="menu-item-title" name="menu-item[<?php echo esc_attr( $i ); ?>][menu-item-title]" value="<?php echo esc_html( $value ); ?>" />
-							<input type="hidden" class="menu-item-url" name="menu-item[<?php echo esc_attr( $i ); ?>][menu-item-url]" value="<?php echo esc_url( $this->get_account_endpoint_url( $key ) ); ?>" />
-							<input type="hidden" class="menu-item-classes" name="menu-item[<?php echo esc_attr( $i ); ?>][menu-item-classes]" />
-						</li>
+                        <li>
+                            <label class="menu-item-title">
+                                <input type="checkbox" class="menu-item-checkbox" name="menu-item[<?php echo esc_attr( $i ); ?>][menu-item-object-id]" value="<?php echo esc_attr( $i ); ?>" /> <?php echo esc_html( $value ); ?>
+                            </label>
+                            <input type="hidden" class="menu-item-type" name="menu-item[<?php echo esc_attr( $i ); ?>][menu-item-type]" value="custom" />
+                            <input type="hidden" class="menu-item-title" name="menu-item[<?php echo esc_attr( $i ); ?>][menu-item-title]" value="<?php echo esc_html( $value ); ?>" />
+                            <input type="hidden" class="menu-item-url" name="menu-item[<?php echo esc_attr( $i ); ?>][menu-item-url]" value="<?php echo esc_url( $this->get_account_endpoint_url( $key ) ); ?>" />
+                            <input type="hidden" class="menu-item-classes" name="menu-item[<?php echo esc_attr( $i ); ?>][menu-item-classes]" />
+                        </li>
 						<?php
 						$i--;
 					endforeach;
 					?>
-				</ul>
-			</div>
-			<p class="button-controls">
+                </ul>
+            </div>
+            <p class="button-controls">
 				<span class="list-controls">
 					<a href="<?php echo admin_url( 'nav-menus.php?page-tab=all&selectall=1#posttype-wpfftt-endpoints' ); ?>" class="select-all"><?php _e( 'Select all', 'wp-fftt' ); ?></a>
 				</span>
-				<span class="add-to-menu">
+                <span class="add-to-menu">
 					<input type="submit" class="button-secondary submit-add-to-menu right" value="<?php esc_attr_e( 'Add to menu', 'wp-fftt' ); ?>" name="add-post-type-menu-item" id="submit-posttype-wpfftt-endpoints">
 					<span class="spinner"></span>
 				</span>
-			</p>
-		</div>
-        <?php }
+            </p>
+        </div>
+	<?php }
 
 
 }

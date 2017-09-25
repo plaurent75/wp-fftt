@@ -16,7 +16,7 @@
  * Plugin Name:       Wp FFTT
  * Plugin URI:        https://www.patricelaurent.net/portfolio/plugin/wp-fftt/
  * Description:       Display table tennis data from the official FFTT Website.
- * Version:           1.0.6
+ * Version:           1.0.7
  * Author:            Patrice LAURENT
  * Author URI:        https://www.patricelaurent.net
  * License:           GPL-2.0+
@@ -31,7 +31,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 if ( ! defined( 'WP_FFTT_PLUGIN_VERSION' ) ) {
-    define('WP_FFTT_PLUGIN_VERSION', '1.0.6');
+    define('WP_FFTT_PLUGIN_VERSION', '1.0.7');
 }
 
 /**

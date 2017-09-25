@@ -204,7 +204,7 @@ class Wp_Fftt {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Wp_Fftt_Admin( $this->get_plugin_name(), $this->get_version(), $this->getOptions(), $this->getWpffttSlug() );
+		$plugin_admin = new Wp_Fftt_Admin( $this->get_plugin_name(), $this->get_version(), $this->getOptions(), $this->getWpffttSlug(), $this->getApi() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
